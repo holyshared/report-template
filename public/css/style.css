@@ -1,4 +1,6 @@
 body {
+  font-family: "Bitstream Vera Sans Mono", "Consolas", "Courier", monospace;
+  font-size: 1em;
   text-align: left; }
 
 table {
@@ -7,10 +9,11 @@ table {
   border-spacing: 0px; }
 
 th, td {
-  padding: 5px 10px; }
+  padding: 7px 10px; }
 
 th {
-  border: 1px solid #cccccc; }
+  border: 1px solid #cccccc;
+  background-color: #dedede; }
 
 td {
   border: 1px solid #cccccc; }
@@ -21,5 +24,3 @@ footer {
 #content {
   width: 980px;
   margin: 0px auto 0px auto; }
-
-/*# sourceMappingURL=style.css.map */

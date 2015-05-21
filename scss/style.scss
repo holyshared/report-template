@@ -1,33 +1,7 @@
 @charset 'utf8';
 
-$default-width: 980px;
-$default-border-color: #cccccc;
-
-body {
-  text-align: left;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  border-spacing: 0px;
-}
-
-th, td {
-  padding: 5px 10px;
-}
-
-th {
-  border: 1px solid $default-border-color;
-}
-
-td {
-  border: 1px solid $default-border-color;
-}
-
-footer {
-  text-align: right;
-}
+@import "bourbon/bourbon";
+@import "default";
 
 #content {
   width: $default-width;

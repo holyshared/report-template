@@ -1,11 +1,17 @@
 gulp = require 'gulp'
 react = require 'gulp-react'
 concat = require 'gulp-concat'
+sass = require 'gulp-sass'
 
 gulp.task 'build:react', () ->
   gulp.src 'src/**/*.jsx'
     .pipe react()
     .pipe gulp.dest 'lib/'
+
+gulp.task 'build:sass', () ->
+  gulp.src 'scss/**/*.scss'
+    .pipe sass()
+    .pipe gulp.dest 'public/css'
 
 gulp.task 'build:concat', () ->
   gulp.src 'lib/**/*.js'
@@ -19,4 +25,4 @@ gulp.task 'copy:react', () ->
 gulp.task 'watch', () ->
   gulp.watch 'src/**/*.jsx', [ 'build' ]
 
-gulp.task 'build', [ 'build:react', 'build:concat' ]
+gulp.task 'build', [ 'build:react', 'build:sass', 'build:concat' ]
