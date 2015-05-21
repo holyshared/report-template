@@ -8,11 +8,11 @@ var SourceFile = React.createClass({
   },
   render: function() {
     return <tr>
-      <td>{this.props.orderNumber}</td>
-      <td>{this.props.name}</td>
-      <td>{this.props.executedCount}</td>
-      <td>{this.props.totalCount}</td>
-      <td>{this.props.coverage}%</td>
+      <td className="orderNumber">{this.props.orderNumber}</td>
+      <td className="sourceFile">{this.props.name}</td>
+      <td className="executedCount">{this.props.executedCount}</td>
+      <td className="totalCount">{this.props.totalCount}</td>
+      <td className="coverage">{this.props.coverage}%</td>
     </tr>;
   }
 });
