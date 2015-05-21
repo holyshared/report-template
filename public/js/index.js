@@ -3,7 +3,7 @@
   doc.addEventListener('DOMContentLoaded', function() {
     var report = doc.getElementById('report');
     React.render(
-      React.createElement(SourceFiles, {results: [
+      React.createElement(SourceList, {results: [
           { id:1, orderNumber: 1, name:'/path/to/foo.php', executedCount:0, totalCount:0, coverage:0 },
           { id:2, orderNumber: 2, name:'/path/to/bar.php', executedCount:0, totalCount:0, coverage:0 }
       ]}),
@@ -32,7 +32,7 @@ var SourceFile = React.createClass({displayName: "SourceFile",
   }
 });
 
-var SourceFiles = React.createClass({displayName: "SourceFiles",
+var SourceListBody = React.createClass({displayName: "SourceListBody",
   propTypes: {
     results: React.PropTypes.array.isRequired
   },
@@ -40,7 +40,7 @@ var SourceFiles = React.createClass({displayName: "SourceFiles",
     var results = this.props.results;
 
     return (
-      React.createElement("table", null, 
+      React.createElement("tbody", null, 
         results.map(function(result) {
             return React.createElement(SourceFile, {key: result.id, 
               orderNumber: result.orderNumber, 
@@ -49,6 +49,32 @@ var SourceFiles = React.createClass({displayName: "SourceFiles",
               totalCount: result.totalCount, 
               coverage: result.coverage});
         })
+      )
+    );
+  }
+});
+
+var SourceListHeader = React.createClass({displayName: "SourceListHeader",
+  render: function() {
+    return React.createElement("thead", null, React.createElement("tr", null, 
+      React.createElement("th", null, "Order"), 
+      React.createElement("th", null, "Source"), 
+      React.createElement("th", null, "Executed Count"), 
+      React.createElement("th", null, "Total Count"), 
+      React.createElement("th", null, "Coverage")
+    ));
+  }
+});
+
+var SourceList = React.createClass({displayName: "SourceList",
+  propTypes: {
+    results: React.PropTypes.array.isRequired
+  },
+  render: function() {
+    return (
+      React.createElement("table", null, 
+        React.createElement(SourceListHeader, null), 
+        React.createElement(SourceListBody, {results: this.props.results})
       )
     );
   }

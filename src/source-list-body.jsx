@@ -1,4 +1,4 @@
-var SourceFiles = React.createClass({
+var SourceListBody = React.createClass({
   propTypes: {
     results: React.PropTypes.array.isRequired
   },
@@ -6,7 +6,7 @@ var SourceFiles = React.createClass({
     var results = this.props.results;
 
     return (
-      <table>
+      <tbody>
         {results.map(function(result) {
             return <SourceFile key={result.id}
               orderNumber={result.orderNumber}
@@ -15,7 +15,7 @@ var SourceFiles = React.createClass({
               totalCount={result.totalCount}
               coverage={result.coverage} />;
         })}
-      </table>
+      </tbody>
     );
   }
 });
