@@ -1,0 +1,41 @@
+{
+  "name": "report-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "multi='spec=- mocha-tcov-reporter=-' node_modules/.bin/mocha test",
+    "build": "node_modules/.bin/gulp build",
+    "watch": "node_modules/.bin/gulp watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/holyshared/report-template.git"
+  },
+  "author": "Noritaka Horio",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/holyshared/report-template/issues"
+  },
+  "homepage": "https://github.com/holyshared/report-template",
+  "devDependencies": {
+    "blanket": "^1.1.7",
+    "chai": "^2.3.0",
+    "coffee-script": "^1.9.2",
+    "gulp": "^3.8.11",
+    "gulp-coffee": "^2.3.1",
+    "gulp-concat": "^2.5.2",
+    "gulp-react": "^3.0.1",
+    "mocha": "^2.2.5",
+    "mocha-lcov-reporter": "0.0.2",
+    "mocha-multi": "^0.7.1",
+    "mocha-tcov-reporter": "0.0.4",
+    "react": "^0.13.3"
+  },
+  "config": {
+    "blanket": {
+      "pattern": "/lib/",
+      "data-cover-never": "/node_modules/"
+    }
+  }
+}
